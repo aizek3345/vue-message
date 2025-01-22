@@ -1,6 +1,6 @@
 <template>
-<div :class="['message', { 'new-message': message.isNew }]">
-    <div>Сообщение: {{ message.report }}</div>  
+<div :class="['message', { 'new-message': message?.isNew }]">
+    <div>Сообщение: {{ message?.report }}</div>  
     <div>
         <my-button-message @click = "$emit('removeMessage', message)">Удалить</my-button-message>
     </div>

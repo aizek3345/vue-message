@@ -47,11 +47,13 @@ export default {
     watch: {
         messages: {
             handler(newMessages) {
-                const lastMessage = newMessages[newMessages.length - 1]
-                if (lastMessage.isNew) {
-                    setTimeout(() => {
-                        lastMessage.isNew = false
-                    }, 5000)
+                if (newMessages.length > 0) {
+                    const lastMessage = newMessages[newMessages.length - 1]
+                    if (lastMessage.isNew) {
+                        setTimeout(() => {
+                            lastMessage.isNew = false
+                        }, 5000)
+                    }
                 }
             },
             deep: true
